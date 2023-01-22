@@ -7,6 +7,7 @@ import 'package:sncf_connect/views/EnRoute/projects.dart';
 import 'package:sncf_connect/widgets/help.dart';
 import 'package:sncf_connect/widgets/information.dart';
 import 'package:sncf_connect/widgets/panel_enroute.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -62,19 +63,24 @@ class _HomeState extends State<Home> {
                     const SizedBox(height: 10),
                     TextField(
                       decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.only(left: 20),
                         border: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(30.0),
                         ),
-                        suffixIcon: const CircleAvatar(
-                          backgroundColor: Colors.black,
-                          radius: 30,
-                          child: Icon(Icons.work_outline_outlined,
-                              color: Colors.white),
+                        suffixIcon: GestureDetector(
+                          onTap: () async => await launchUrl(Uri.parse(
+                              "https://linkedin.com/in/elias-tourneux")),
+                          child: const CircleAvatar(
+                            backgroundColor: Colors.black,
+                            radius: 30,
+                            child: Icon(Icons.work_outline_outlined,
+                                color: Colors.white),
+                          ),
                         ),
                         filled: true,
                         fillColor: Colors.white,
-                        hintText: "  Je candidate pour une alternance.",
+                        hintText: "Je candidate pour une alternance.",
                         hintStyle: const TextStyle(color: grayColor),
                       ),
                     ),
@@ -98,12 +104,12 @@ class _HomeState extends State<Home> {
                     type: PageTransitionType.rightToLeft,
                     child: const MonParcours()))
           },
-          child: PanelEnRoute(
+          child: const PanelEnRoute(
               title: "Mon parcours",
               description: "Formations et développement",
               icon: Icons.school_outlined,
-              foreground: const Color(0XFFf39718),
-              background: const Color(0XFFfde9d0)),
+              foreground: Color(0XFFf39718),
+              background: Color(0XFFfde9d0)),
         ),
         GestureDetector(
           onTap: () => Navigator.push(
@@ -111,12 +117,12 @@ class _HomeState extends State<Home> {
               PageTransition(
                   type: PageTransitionType.rightToLeft,
                   child: const MyProjects())),
-          child: PanelEnRoute(
+          child: const PanelEnRoute(
               title: "Mes projets",
               description: "Professionnels, scolaires...",
               icon: Icons.devices_outlined,
-              foreground: const Color(0XFFdc82fe),
-              background: const Color(0XFFf8e6fe)),
+              foreground: Color(0XFFdc82fe),
+              background: Color(0XFFf8e6fe)),
         ),
         GestureDetector(
           onTap: () => Navigator.push(
@@ -124,14 +130,14 @@ class _HomeState extends State<Home> {
               PageTransition(
                   type: PageTransitionType.rightToLeft,
                   child: const MyMotivations())),
-          child: PanelEnRoute(
+          child: const PanelEnRoute(
               title: "Mes motivations",
               description: "Pourquoi je veux vous rejoindre !",
               icon: Icons.favorite_border_outlined,
-              foreground: const Color(0XFF9a9bfc),
-              background: const Color(0XFFedecfe)),
+              foreground: Color(0XFF9a9bfc),
+              background: Color(0XFFedecfe)),
         ),
-        Information(
+        const Information(
           description:
               "Cette application est une démonstration de mes compétences en Flutter. N'ayant pas accès aux différents éléments graphiques, maquettes, police d'écriture, etc. j'ai essayé de rester le plus fidèle possible aux éléments à ma disposition.",
         ),
