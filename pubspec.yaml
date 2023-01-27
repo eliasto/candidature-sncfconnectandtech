@@ -70,7 +70,8 @@ flutter:
     - assets/help.png
     - assets/pp.jpg
     - assets/projects/
-    - assets/motivations.jpg
+    - assets/motivation.jpg
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

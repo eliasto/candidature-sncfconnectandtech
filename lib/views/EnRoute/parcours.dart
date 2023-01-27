@@ -10,6 +10,12 @@ class MonParcours extends StatelessWidget {
   Widget build(BuildContext context) {
     final data = [
       {
+        "date": "Janvier 2023",
+        "title": "Développement mobile (Flutter) de l'application de mon école",
+        "description":
+            "J'ai rejoint l'équipe de l'application myDevinci, qui permets aux étudiants des trois écoles du pôle Léonard de Vinci d'avoir accès à leur portail étudiant directement sur leur téléphone.",
+      },
+      {
         "date": "Août 2022",
         "title": "Semestre à l'étranger - Hanyang University, Corée du Sud",
         "description":
