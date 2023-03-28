@@ -47,7 +47,7 @@ class _ControllerState extends State<Controller> {
               return;
             } else if (value == 2) {
               await launchUrl(
-                  Uri.parse("https://sncfconnect.eliasto.fr/cv.pdf"),
+                  Uri.parse("https://sncfconnect.eliqs.dev/cv.pdf"),
                   mode: LaunchMode.externalApplication);
               return;
             }
